@@ -1,9 +1,10 @@
+"use strict"
+
 // IMPORTS //
 
 const express = require("express");
 const repoContext = require("./repository/repository-wrapper");
 const app = express();
-
 
 
 // MIDDLEWARE //
@@ -22,6 +23,7 @@ app.get("/api/products", (req,res) => {
     res.send(products);
 });
 
+
 // GET product by id
 // http://localhost:5005/api/products/:id
 app.get("/api/products/:id", (req, res) => {
@@ -30,6 +32,7 @@ app.get("/api/products/:id", (req, res) => {
     return res.send(product);
 });
 
+
 // POST new product
 // http://localhost:5005/api/products
 app.post("/api/products", (req,res) => {
@@ -37,6 +40,26 @@ app.post("/api/products", (req,res) => {
     const addedProduct = repoContext.products.createProduct(newProduct);
     return res.status(201).send(addedProduct);
 });
+
+
+// PUT an existing product
+// http://localhost:5005/api/products/:id
+app.put("/api/products/:id", (req,res) => {
+    const id = parseInt(req.params.id);
+    const productPropertiesToModify = req.body;
+    const productToUpdate = repoContext.products.updateProduct(id, productPropertiesToModify);
+    return res.send(productToUpdate);
+});
+
+
+// DELETE a product
+// http://localhost:5005/api/products/:id
+app.delete("/api/products/:id", (req,res) => {
+    const id = parseInt(req.params.id);
+    const deletedProduct = repoContext.products.deleteProduct(id);
+    return res.send(deletedProduct);
+});
+
 
 // STARTING A SERVER //
 
