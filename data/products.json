@@ -33,5 +33,26 @@
     "description": "Heavy duty canteen with temperature regulating technology.",
     "category": "Food & Beverage",
     "price": 32
+  },
+  {
+    "id": 6,
+    "name": "YETI Rambler Oceanic Blue Bottle",
+    "description": "Heavy duty canteen with temperature regulating technology.",
+    "category": "Food & Beverage",
+    "price": 32
+  },
+  {
+    "id": 7,
+    "name": "3M Weatherproof Tent Patches",
+    "description": "One and done tent repairs in even the harshest conditions.",
+    "category": "Hardware",
+    "price": 19.89
+  },
+  {
+    "id": 8,
+    "name": "3M Weatherproof Tent Patches",
+    "description": "One and done tent repairs in even the harshest conditions.",
+    "category": "Hardware",
+    "price": 19.89
   }
 ]
